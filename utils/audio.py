@@ -37,8 +37,8 @@ _inv_mel_basis = None
 
 def _build_mel_basis(hparams):
     assert hparams.fmax <= hparams.sample_rate // 2
-    return librosa.filters.mel(hparams.sample_rate,
-                               hparams.n_fft,
+    return librosa.filters.mel(sr=hparams.sample_rate,
+                               n_fft=hparams.n_fft,
                                n_mels=hparams.acoustic_dim,
                                fmin=hparams.fmin,
                                fmax=hparams.fmax)
